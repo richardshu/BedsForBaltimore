@@ -1,12 +1,7 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import Shelter from "./Shelter";
 
 class ShelterList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shelters: props.shelters
-    };
-  }
   render() {
     return (
       <div className="shelter-list">

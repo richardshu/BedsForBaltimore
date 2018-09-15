@@ -1,5 +1,4 @@
-import { Component } from 'react';
-
+import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -9,12 +8,6 @@ import Typography from '@material-ui/core/Typography';
 
 
 class Shelter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shelter : props.shelter
-    };
-  }
   render() {
     const data = {
       freeBeds : this.props.shelter.FreeBeds || 0,
