@@ -9,25 +9,21 @@ import Typography from '@material-ui/core/Typography';
 
 
 class Shelter extends Component {
-  render() {
-    let phoneURL = "tel:+1" + this.props["Phone"].match(/\d+/g).join("");
-    const data = {
-      freeBeds : this.props["Number of Open Beds"],
-      numberOfBeds : this.props["Number of Beds"],
-      name : this.props["Name of Shelter"],
-      siteURL : this.props["Website"],
-      address : this.props["Address"],
-      phone : this.props["Phone"],
+  constructor(props) {
+    super(props);
+    this.state = {
+      shelter : props.shelter
     };
-    // return (
-    //   <div className="shelter">
-    //     <div className="beds">Available Beds: {data.freeBeds} of {data.numberOfBeds}</div>
-    //     <div className="name">{data.name}</div>
-    //     <div className="site"><a href={data.siteURL}>{data.siteURL}</a></div>
-    //     <div className="address">{data.address}</div>
-    //     <div className="phone">{data.phone}</div>
-    //   </div>
-    // );
+  }
+  render() {
+    const data = {
+      freeBeds : this.props.shelter.FreeBeds || 0,
+      numberOfBeds : this.props.shelter.TotalBeds || 0,
+      name : this.props.shelter.Name || "[Name Not Found]",
+      website : "example.com",
+      address : this.props.shelter.Address || "[Address Not Found]",
+      phone : this.props.shelter.Phone || "[Phone Not Found]",
+    };
     return (
       <Card>
         <CardActionArea>
@@ -44,19 +40,11 @@ class Shelter extends Component {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" href={data.siteURL} color="primary">{data.siteURL}</Button>
-          <Button size="small" href={phoneURL} color="primary">{data.phone}</Button>
+          <Button size="small" href={data.website} color="primary">{data.website}</Button>
         </CardActions>
       </Card>
     );
   }
 }
 
-Shelter.defaultProps = {
-  freeBeds : 0,
-  numberOfBeds : 0,
-  name : "Default Name",
-  siteURL : "example.com",
-  address : "123 Fake St., City, ST 12345",
-  phone : "(123) 456-7890",
-};
+export default Shelter;

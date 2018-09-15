@@ -1,15 +1,20 @@
 import { Component } from 'react';
 
 class ShelterList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      shelters: props.shelters
+    };
+  }
   render() {
-    let shelters = this.props.shelters;
     return (
       <div className="shelter-list">
         {
-          shelters.map((shelter, i) => {
+          this.props.shelters.map((shelter, i) => {
             return (
             <li key={i}>
-              <Shelter {...shelter}/>
+              <Shelter shelter={shelter}/>
             </li>
             )
           })
@@ -19,6 +24,4 @@ class ShelterList extends Component {
   }
 }
 
-ShelterList.defaultProps = {
-  shelters : [],
-};
+export default ShelterList;
