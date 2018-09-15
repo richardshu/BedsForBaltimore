@@ -1,0 +1,27 @@
+{
+  "name": "homelesshaven",
+  "version": "1.0.0",
+  "description": "Boilerplate for React and Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardshu/HomelessHaven.git"
+  },
+  "author": "Richard Shu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richardshu/HomelessHaven/issues"
+  },
+  "homepage": "https://github.com/richardshu/HomelessHaven#readme",
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
