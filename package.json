@@ -19,7 +19,8 @@
   "homepage": "https://github.com/richardshu/HomelessHaven#readme",
   "dependencies": {
     "concurrently": "^4.0.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "mongodb-stitch-browser-sdk": "^4.0.13"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
