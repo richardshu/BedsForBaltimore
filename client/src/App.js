@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomelessShelters from './Components/Pages/HomelessShelters';
+import HomelessSheltersList from './Components/Admin/Pages/HomelessSheltersList';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Homeless Haven</h1>
         </header>
-        <HomelessShelters />
+        <HomelessSheltersList />
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './HomelessShelters.css';
+import './HomelessSheltersList.css';
 
-class HomelessShelters extends Component {
+class HomelessSheltersList extends Component {
     constructor() {
         super();
         this.state = {
@@ -20,7 +20,7 @@ class HomelessShelters extends Component {
     render() {
         return (
             <div>
-                <h1>Homeless shelters near you</h1>
+                <h1>Your homeless shelters</h1>
                 <ul>
                     {this.state.homelessShelters.map(homelessShelter =>
                         <li key={homelessShelter.id}> { homelessShelter.name } { homelessShelter.address } </li> 
@@ -31,4 +31,4 @@ class HomelessShelters extends Component {
     }
 }
 
-export default HomelessShelters;
+export default HomelessSheltersList;
