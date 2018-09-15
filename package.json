@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/richardshu/HomelessHaven#readme",
   "dependencies": {
+    "@material-ui/core": "^3.0.3",
     "concurrently": "^4.0.1",
     "express": "^4.16.3",
     "mongodb-stitch-browser-sdk": "^4.0.13"
