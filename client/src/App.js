@@ -4,6 +4,7 @@ import { Stitch, RemoteMongoClient, AnonymousCredential } from 'mongodb-stitch-b
 import SheltersList from './Components/User/Pages/SheltersList';
 import Navbar from './Components/Navbar/Navbar';
 import './App.css';
+import AddHomelessShelter from './Components/Pages/AddHomelessShelter';
 
 const client = Stitch.initializeDefaultAppClient('homelesshaven-tcmuc');
 const collection = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('Shelters').collection("Data");
