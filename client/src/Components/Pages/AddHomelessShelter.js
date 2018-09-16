@@ -4,78 +4,74 @@ import {
     RemoteMongoClient,
     AnonymousCredential
 } from "mongodb-stitch-browser-sdk";
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Input } from 'reactstrap';
 
 const client = Stitch.initializeDefaultAppClient('homelesshaven-tcmuc');
 const db = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('Shelters');
+client.auth.loginWithCredential(new AnonymousCredential());
 const data = db.collection('TestData');
 
 
 class AddHomelessShelter extends Component {
 
-    _onButtonClick() {
-        console.log("Arrived");
-        console.log(document.getElementById("shelterName").nodeValue);
+    submitForm(e) {
+        e.preventDefault();
+        console.log('Hello submission');
         data.insertOne({
-            Name: document.getElementById("shelterName"),
-            Address: document.getElementById("shelterStreetAddress"), //+ document.getElementById("aptNum") + 
-            //document.getElementById("city") + document.getElementById("state"),
-            Phone: document.getElementById("phone"),
-            FreeBeds: document.getElementById("freeBeds")
-        }).then(res => console.log(res));
-    };
+            Name: document.getElementById("shelterName").value,
+            Address: document.getElementById("shelterStreetAddress").value + ' ' + document.getElementById("aptNum").value + 
+            ' ' + document.getElementById("city").value + ' ' + document.getElementById("state").value,
+            Phone: document.getElementById("phone").value,
+            FreeBeds: document.getElementById("freeBeds").value
+        });
+    }
+
+    handleChange = async (event) => {
+        const { target } = event;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const { name } = target;
+        await this.setState({
+          [ name ]: value,
+        });
+    }
 
     render() {
         return (
-            <Form>
+            <Form className="form" onSubmit={ (e) => this.submitForm(e) }>
                 <FormGroup>
-                    <Label for="shelterName">Shelter Name</Label>
-                    <Input type="name" name="name" id="shelterName" placeholder="Shelter" />
+                    <Input type="text" name="name" id="name" placeholder="Shelter" 
+                    onChange={ (e) => {
+                        this.handleChange(e)
+                    }}/>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="shelterStreetAddress">Street Address</Label>
-                    <Input type="streetAddress" name="streetAddress" id="shelterStreetAddress" placeholder="123 Main Street" />
+                    <Input type="text" name="streetAddress" id="shelterStreetAddress"
+                    placeholder="123 Main Street" onChange={ (e) => this.handleChange(e) }/>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="shelterApartmentNumber">Apartment Number</Label>
-                    <Input type="aptNum" name="aptNum" id="aptNum" placeholder="Apartment 404" />
+                    <Input type="number" name="aptNum" id="aptNum" placeholder="Apartment 404"
+                    onChange={ (e) => this.handleChange(e) }/>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="shelterCity">City</Label>
-                    <Input type="city" name="city" id="city" placeholder="Baltimore" />
+                    <Input type="text" name="city" id="city" placeholder="Baltimore"
+                    onChange={ (e) => this.handleChange(e) }/>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="shelterState">State</Label>
-                    <Input type="state" name="state" id="state" placeholder="Maryland" />
+                    <Input type="text" name="state" id="state" placeholder="Maryland"
+                    onChange={ (e) => this.handleChange(e) }/>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="numFreeBeds">Number of Free Beds</Label>
-                    <Input type="freeBeds" name="freeBeds" id="freeBeds" placeholder="42" />
+                    <Input type="number" name="freeBeds" id="freeBeds" placeholder="42"
+                    onChange={ (e) => this.handleChange(e) }/>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="phoneNumber">Phone Number</Label>
-                    <Input type="phone" name="phone" id="phone" placeholder="800-867-5309" />
+                    <Input type="tel" name="phone" id="phone" placeholder="800-867-5309"
+                    onChange={ (e) => this.handleChange(e) }/>
                 </FormGroup>
-                <Button onClick={this._onButtonClick} id="submitButton">Submit</Button>
+                <Button>Submit</Button>
             </Form>
         );
     }
 }
-
-// class AddShelter extends Component {
-//     render() {
-//         return;
-//     }
-
-//     newSingleEntry(sName, sAddress, sPhone, sBeds, sFree) {
-//         data.insertOne({
-//             Name: sName,
-//             Address: sAddress,
-//             Phone: sPhone,
-//             TotalBeds: sBeds,
-//             FreeBeds: sFree
-//         });
-//     }
-// }
 
 export default AddHomelessShelter;
