@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Stitch, RemoteMongoClient, AnonymousCredential } from 'mongodb-stitch-browser-sdk'
 
 import Navbar from './Components/Navbar/Navbar';
@@ -44,12 +45,30 @@ class App extends Component {
     });
   }
 
+  renderAdminAddHomelessShelter() {
+    return <AddHomelessShelter coll={collection} />;
+  }
+
+  renderAdminHomelessSheltersList() {
+    return <HomelessSheltersList />;
+  }
+
+  renderUserHomelessSheltersList() {
+    return <SheltersList homelessShelters={this.state.homelessShelters} />;
+  }
+
   render() {
     return (
       <div className="App">
         <Navbar />
-        <SheltersList homelessShelters={this.state.homelessShelters} />
-        <AddHomelessShelter coll={collection} />
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" render={() => this.renderUserHomelessSheltersList()} />
+            <Route path="/Admin/AddHomelessShelter" render={() => this.renderAdminAddHomelessShelter()} />
+            <Route path="/Admin/HomelessSheltersList" render={() => this.renderAdminHomelessSheltersList()} />
+            <Route path="/User/SheltersList" render={() => this.renderUserHomelessSheltersList()} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
