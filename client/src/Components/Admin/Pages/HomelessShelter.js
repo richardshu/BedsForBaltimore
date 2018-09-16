@@ -14,7 +14,7 @@ class HomelessShelter extends Component {
     deleteShelter() {
         console.log("Deleting shelter");
     }
-    
+
     render() {
         const shelter = this.props.shelter;
         return (
@@ -23,8 +23,8 @@ class HomelessShelter extends Component {
                 <CardBody>
                     <CardTitle>{shelter.name}</CardTitle>
                     <CardSubtitle> {shelter.address} </CardSubtitle>
-                    <CardText> {shelter.phoneNumber} </CardText>
-                    <CardText> {shelter.numberOfAvailableBeds} beds available</CardText>
+                    <CardText> {shelter.phone} </CardText>
+                    <CardText> {shelter.freeBeds} beds available</CardText>
                     <Button color="warning" onClick={this.editShelter}>Edit</Button>
                     <Button color="danger" onClick={this.deleteShelter}>Delete</Button>
                 </CardBody>
