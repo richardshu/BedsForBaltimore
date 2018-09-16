@@ -12,6 +12,9 @@ import './App.css';
 const client = Stitch.initializeDefaultAppClient('homelesshaven-tcmuc');
 const collection = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('Shelters').collection("Data");
 
+const client = Stitch.initializeDefaultAppClient('homelesshaven-tcmuc');
+const collection = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('Shelters').collection("TestData");
+
 class App extends Component {
 
   constructor() {
