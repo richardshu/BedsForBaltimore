@@ -1,2 +1,2 @@
 # Beds for Baltimore
-A website to help people living in Baltimore find and book homeless shelters
+Beds for Baltimore is a project that aims to centralize data about the homeless shelters in Baltimore. Rather than trawling through pages of search results trying to find a phone number, Beds for Baltimore is a tool to be used by shelter administrators to keep their information updated and easily accessible. Beds for Baltimore tells users the number of empty beds, if any, available at the shelter.
