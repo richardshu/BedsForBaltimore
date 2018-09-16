@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Stitch, RemoteMongoClient, AnonymousCredential } from "mongodb-stitch-browser-sdk";
 import { Button, Container, Form, FormGroup, Input } from 'reactstrap';
 
-import './AddHomelessShelter.css';
+import './EditHomelessShelter.css';
 
-class AddHomelessShelter extends Component {
+class EditHomelessShelter extends Component {
 
     submitForm(e) {
         e.preventDefault();
@@ -38,7 +38,7 @@ class AddHomelessShelter extends Component {
     render() {
         return (
             <Container>
-                <h1 id="title_text">Add a homeless shelter</h1>
+                <h1 id="title_text">Edit your homeless shelter</h1>
                 <Form className="form" id="submitForm" onSubmit={(e) => this.submitForm(e)}>
                     <FormGroup>
                         <Input required type="text" name="name" id="name" placeholder="Shelter Name"
@@ -79,4 +79,4 @@ class AddHomelessShelter extends Component {
     }
 }
 
-export default AddHomelessShelter;
+export default EditHomelessShelter;

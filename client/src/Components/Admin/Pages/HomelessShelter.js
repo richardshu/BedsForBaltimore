@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Button, Card, CardText, CardBody, CardTitle, CardSubtitle
-} from 'reactstrap';
+import { Button, Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 
 import './HomelessSheltersList.css';
 
@@ -25,7 +23,7 @@ class HomelessShelter extends Component {
                     <CardSubtitle> {shelter.address} </CardSubtitle>
                     <CardText> {shelter.phone} </CardText>
                     <CardText> {shelter.freeBeds} beds available</CardText>
-                    <Button color="warning" onClick={this.editShelter}>Edit</Button>
+                    <Button color="warning" onClick={this.editShelter} href="EditHomelessShelter">Edit</Button>
                     <Button color="danger" onClick={this.deleteShelter}>Delete</Button>
                 </CardBody>
             </Card>
