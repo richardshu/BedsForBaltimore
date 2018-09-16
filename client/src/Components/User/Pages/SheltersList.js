@@ -9,7 +9,7 @@ class SheltersList extends Component {
     render() {
         return (
             <Container>
-                <h1 id="title">Shelters</h1>
+                <h1 id="title">Find a homeless shelter near you</h1>
                 <Row>
                     { this.props.homelessShelters.map((shelter, i) => {
                         return (

@@ -38,7 +38,7 @@ class EditHomelessShelter extends Component {
     render() {
         return (
             <Container>
-                <h1 id="title_text">Edit your homeless shelter</h1>
+                <h1 id="title">Edit your homeless shelter</h1>
                 <Form className="form" id="submitForm" onSubmit={(e) => this.submitForm(e)}>
                     <FormGroup>
                         <Input required type="text" name="name" id="name" placeholder="Shelter Name"
