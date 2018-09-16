@@ -49,7 +49,7 @@ class HomelessSheltersList extends Component {
                         </Col>
                     )}
                 </Row>
-                <Button color="dark">Add</Button>
+                <Button id="add_shelter_button" color="dark">Add Shelter</Button>
             </Container>
         );
     }
