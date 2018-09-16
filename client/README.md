@@ -6,7 +6,7 @@ Beds for Baltimore is a project that aims to centralize data about the homeless 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-It consists of a React client styled with Bootstrap/Reactstrap and served by MongoDB Stitch.
+It consists of a React client styled with Bootstrap/Reactstrap and served by a [MongoDB-Atlas](https://www.mongodb.com/) database and [MongoDB Stitch](https://www.mongodb.com/cloud/stitch).
 
 You can refer [to the React documentation](https://reactjs.org/docs/react-dom.html#browser-support) for more information about supported browsers.
 
