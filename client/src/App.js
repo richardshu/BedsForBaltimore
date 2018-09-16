@@ -50,7 +50,7 @@ class App extends Component {
   }
 
   renderAdminHomelessSheltersList() {
-    return <HomelessSheltersList />;
+    return <HomelessSheltersList homelessShelters={this.state.homelessShelters} />;
   }
 
   renderUserHomelessSheltersList() {

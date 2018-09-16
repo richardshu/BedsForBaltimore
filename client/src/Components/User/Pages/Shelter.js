@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { 
-    Button, Card, CardText, CardBody, CardTitle, CardSubtitle
-} from 'reactstrap';
+import { Button, Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 
 import './SheltersList.css';
 

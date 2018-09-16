@@ -1,24 +1,11 @@
 import React, { Component } from 'react';
-import { 
-    Button, Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col
-} from 'reactstrap';
+import { Button, Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col} from 'reactstrap';
+import HomelessShelter from './HomelessShelter';
 
 import './HomelessSheltersList.css';
 
 class HomelessSheltersList extends Component {
-    constructor() {
-        super();
-        this.state = {
-            homelessShelters: []
-        }
-    }
-
-    componentDidMount() {
-        fetch('api/homelessShelters')
-            .then(res => res.json())
-            .then(homelessShelters => this.setState({ homelessShelters }));
-    }
-
+    
     editShelter() {
         console.log("Editing shelter");
     }
@@ -30,26 +17,17 @@ class HomelessSheltersList extends Component {
     render() {
         return (
             <Container>
-                <h1 id="title">Your homeless shelters</h1>
+                <h1 id="title">Your homeless shelters (admin)</h1>
                 <Row>
-                    {this.state.homelessShelters.map(homelessShelter =>
-                        <Col sm="4" key={homelessShelter.id}>
-                            <Card className="card">
-                                <div id="color_gradient">Hi</div>
-                                <CardBody>
-                                    <CardTitle>{homelessShelter.name}</CardTitle>
-                                    <CardSubtitle> {homelessShelter.address} </CardSubtitle>
-                                    <CardText> {homelessShelter.phoneNumber} </CardText>
-                                    <CardText> {homelessShelter.numberOfAvailableBeds} beds available</CardText>
-                                    <Button color="info" href={homelessShelter.websiteURL} target="_blank">Website</Button>
-                                    <Button color="warning" onClick={this.editShelter}>Edit</Button>
-                                    <Button color="danger" onClick={this.deleteShelter}>Delete</Button>
-                                </CardBody>
-                            </Card>
-                        </Col>
+                    { this.props.homelessShelters.map((shelter, i) => {
+                        return (
+                            <Col sm="4" key={i}>
+                                <HomelessShelter shelter={shelter} />
+                            </Col>
+                        )}
                     )}
                 </Row>
-                <Button id="add_shelter_button" color="dark">Add Shelter</Button>
+                <Button id="add_shelter_button" href="AddHomelessShelter" color="dark">Add Shelter</Button>
             </Container>
         );
     }

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { 
-    Container, Row, Col
-} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
+import Shelter from './Shelter';
 
 import './SheltersList.css';
-import Shelter from './Shelter';
+
 
 class SheltersList extends Component {
     render() {
