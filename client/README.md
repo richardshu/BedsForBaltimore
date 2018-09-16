@@ -33,3 +33,4 @@ We welcome your[feedback](https://github.com/richardshu/BedsForBaltimore/issues)
 * Implement shelter administrator secure user login and privileges
 * Work with shelters to determine the best way to keep bed availability data as close to real-time as possible
 * Display times that individual shelters' bed availability was last updated
+* Cosmetic updates
