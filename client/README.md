@@ -10,6 +10,8 @@ It consists of a React client styled with Bootstrap/Reactstrap and served by a [
 
 You can refer [to the React documentation](https://reactjs.org/docs/react-dom.html#browser-support) for more information about supported browsers.
 
+The iOS app is available [here](https://github.com/codebykashfi/BedsForBaltimoreiOSApplication).
+
 To run the project locally you will need to have npm installed (we are using version 6.4.1):
 
 ```
