@@ -3,7 +3,7 @@ import {
     Container, Row, Col
 } from 'reactstrap';
 
-import '../../Admin/Pages/HomelessSheltersList.css';
+import './SheltersList.css';
 import Shelter from './Shelter';
 
 class SheltersList extends Component {

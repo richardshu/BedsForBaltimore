@@ -3,7 +3,7 @@ import {
     Button, Card, CardText, CardBody, CardTitle, CardSubtitle
 } from 'reactstrap';
 
-import '../../Admin/Pages/HomelessSheltersList.css';
+import './SheltersList.css';
 
 class Shelter extends Component {
     render() {
