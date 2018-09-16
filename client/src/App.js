@@ -6,7 +6,7 @@ import Navbar from './Components/Navbar/Navbar';
 import './App.css';
 
 const client = Stitch.initializeDefaultAppClient('homelesshaven-tcmuc');
-const collection = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('Shelters').collection("TestData");
+const collection = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('Shelters').collection("Data");
 
 class App extends Component {
 
