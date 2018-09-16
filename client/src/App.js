@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import SheltersList from './Components/User/Pages/SheltersList';
+import Navbar from './Components/Navbar/Navbar';
 import './App.css';
 
 class App extends Component {
+
   constructor() {
     super();
     this.state = {
       homelessShelters : []
     };
   }
+
   componentDidMount(){
     //database request here
     this.setState({
@@ -23,13 +26,12 @@ class App extends Component {
       ]
     });
   }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Beds for Baltimore</h1>
-        </header>
-        <SheltersList homelessShelters={this.state.homelessShelters}/>
+        <Navbar />
+        <SheltersList homelessShelters={this.state.homelessShelters} />
       </div>
     );
   }
