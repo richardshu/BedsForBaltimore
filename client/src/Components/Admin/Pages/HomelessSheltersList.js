@@ -27,7 +27,7 @@ class HomelessSheltersList extends Component {
                         )}
                     )}
                 </Row>
-                <Button id="add_shelter_button" href="AddHomelessShelter" color="dark">Add Shelter</Button>
+                <Button id="add_shelter_button" href="AddHomelessShelter">Add Shelter</Button>
             </Container>
         );
     }

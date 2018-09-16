@@ -19,4 +19,6 @@ Button {
 
 #add_shelter_button {
     margin-bottom: 30px;
+    border-color:#3be8b0;
+    background-color: #3be8b0;
 }
