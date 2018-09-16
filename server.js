@@ -10,7 +10,6 @@ app.get('/api/homelessShelters', (req, res) => {
             name: 'Homeless Shelter 1', 
             address: 'Address 1', 
             phoneNumber: '111-111-1111',
-            numberOfBeds: 100,
             numberOfAvailableBeds: 23,
             websiteURL: 'https://google.com'
         },
@@ -19,7 +18,6 @@ app.get('/api/homelessShelters', (req, res) => {
             name: 'Homeless Shelter 2', 
             address: 'Address 2',
             phoneNumber: '222-222-2222',
-            numberOfBeds: 75,
             numberOfAvailableBeds: 17,
             websiteURL: 'https://bing.com'
         },
@@ -28,7 +26,29 @@ app.get('/api/homelessShelters', (req, res) => {
             name: 'Homeless Shelter 3', 
             address: 'Address 3',
             phoneNumber: '333-333-3333',
-            numberOfBeds: 50,
+            numberOfAvailableBeds: 32,
+            websiteURL: 'https://yahoo.com'
+        },{
+            id: 4,
+            name: 'Homeless Shelter 4', 
+            address: 'Address 4', 
+            phoneNumber: '444-444-4444',
+            numberOfAvailableBeds: 23,
+            websiteURL: 'https://google.com'
+        },
+        {
+            id: 5,
+            name: 'Homeless Shelter 5', 
+            address: 'Address 5',
+            phoneNumber: '555-555-5555',
+            numberOfAvailableBeds: 17,
+            websiteURL: 'https://bing.com'
+        },
+        {
+            id: 6,
+            name: 'Homeless Shelter 6', 
+            address: 'Address 6',
+            phoneNumber: '666-666-6666',
             numberOfAvailableBeds: 32,
             websiteURL: 'https://yahoo.com'
         }

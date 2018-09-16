@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/richardshu/HomelessHaven#readme",
   "dependencies": {
-    "@material-ui/core": "^3.0.3",
+    "bootstrap": "^4.1.1",
     "concurrently": "^4.0.1",
     "express": "^4.16.3",
-    "mongodb-stitch-browser-sdk": "^4.0.13"
+    "mongodb-stitch-browser-sdk": "^4.0.13",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "reactstrap": "^6.4.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"

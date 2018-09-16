@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import { CardContent } from '@material-ui/core';
-import CardActions from '@material-ui/core/CardActions';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import { 
+    Button, Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col
+} from 'reactstrap';
 
 import './HomelessSheltersList.css';
 
@@ -24,32 +19,38 @@ class HomelessSheltersList extends Component {
             .then(homelessShelters => this.setState({ homelessShelters }));
     }
 
+    editShelter() {
+        console.log("Editing shelter");
+    }
+
+    deleteShelter() {
+        console.log("Deleting shelter");
+    }
+
     render() {
         return (
-            <div>
-                <h1>Your homeless shelters</h1>
-                <Grid container spacing={40}>
-                    <Grid item xs={2}></Grid>
+            <Container>
+                <h1 id="title">Your homeless shelters</h1>
+                <Row>
                     {this.state.homelessShelters.map(homelessShelter =>
-                        <Grid item xs key={homelessShelter.id}>
-                            <Card>
-                                <CardHeader title={homelessShelter.name} />
-                                <CardContent>
-                                    <Typography>{homelessShelter.address}</Typography>
-                                    <Typography>{homelessShelter.phoneNumber}</Typography>
-                                    <Typography>{homelessShelter.numberOfBeds}</Typography>
-                                    <Typography>{homelessShelter.numberOfAvailableBeds}</Typography>
-                                </CardContent>
-                                <CardActions>
-                                    <Button>Edit</Button>
-                                    <Button>Delete</Button>
-                                </CardActions>
+                        <Col sm="4" key={homelessShelter.id}>
+                            <Card className="card">
+                                <div id="color_gradient">Hi</div>
+                                <CardBody>
+                                    <CardTitle>{homelessShelter.name}</CardTitle>
+                                    <CardSubtitle> {homelessShelter.address} </CardSubtitle>
+                                    <CardText> {homelessShelter.phoneNumber} </CardText>
+                                    <CardText> {homelessShelter.numberOfAvailableBeds} beds available</CardText>
+                                    <Button color="info" href={homelessShelter.websiteURL} target="_blank">Website</Button>
+                                    <Button color="warning" onClick={this.editShelter}>Edit</Button>
+                                    <Button color="danger" onClick={this.deleteShelter}>Delete</Button>
+                                </CardBody>
                             </Card>
-                        </Grid>     
+                        </Col>
                     )}
-                    <Grid item xs={2}></Grid>
-                </Grid>
-            </div>
+                </Row>
+                <Button color="dark">Add</Button>
+            </Container>
         );
     }
 }
