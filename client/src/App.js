@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SheltersList from './Components/User/Pages/SheltersList';
 import Navbar from './Components/Navbar/Navbar';
 import './App.css';
+import AddHomelessShelter from './Components/Pages/AddHomelessShelter';
 
 class App extends Component {
 
