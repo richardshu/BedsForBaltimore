@@ -4,7 +4,9 @@ import {
     RemoteMongoClient,
     AnonymousCredential
 } from "mongodb-stitch-browser-sdk";
-import { Button, Form, FormGroup, Input } from 'reactstrap';
+import { Button, Container, Form, FormGroup, Input } from 'reactstrap';
+
+import './AddHomelessShelter.css';
 
 class AddHomelessShelter extends Component {
 
@@ -39,41 +41,43 @@ class AddHomelessShelter extends Component {
 
     render() {
         return (
-            <Form className="form" id="submitForm" onSubmit={(e) => this.submitForm(e)}>
-                <FormGroup>
-                    <Input required type="text" name="name" id="name" placeholder="Shelter Name"
-                        onChange={(e) => { this.handleChange(e) }} />
-                </FormGroup>
-                <FormGroup>
-                    <Input required type="text" name="streetAddress" id="streetAddress"
-                        placeholder="Street Address" onChange={(e) => this.handleChange(e)} />
-                </FormGroup>
-                <FormGroup>
-                    <Input type="text" name="aptNum" id="aptNum" placeholder="Apartment Number"
-                        onChange={(e) => this.handleChange(e)} />
-                </FormGroup>
-                <FormGroup>
-                    <Input required type="text" name="city" id="city" placeholder="City"
-                        onChange={(e) => this.handleChange(e)} />
-                </FormGroup>
-                <FormGroup>
-                    <Input required type="text" name="state" id="state" placeholder="State"
-                        onChange={(e) => this.handleChange(e)} />
-                </FormGroup>
-                <FormGroup>
-                    <Input required type="number" name="freeBeds" id="freeBeds" placeholder="Number of Free Beds"
-                        onChange={(e) => this.handleChange(e)} />
-                </FormGroup>
-                <FormGroup>
-                    <Input required type="tel" name="phone" id="phone" placeholder="Phone Number"
-                        onChange={(e) => this.handleChange(e)} />
-                </FormGroup>
-                <FormGroup>
-                    <Input type="text" name="website" id="website" placeholder="Website"
-                        onChange={(e) => this.handleChange(e)} />
-                </FormGroup>
-                <Button>Submit</Button>
-            </Form>
+            <Container>
+                <Form className="form" id="submitForm" onSubmit={(e) => this.submitForm(e)}>
+                    <FormGroup>
+                        <Input required type="text" name="name" id="name" placeholder="Shelter Name"
+                            onChange={(e) => { this.handleChange(e) }} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input required type="text" name="streetAddress" id="streetAddress"
+                            placeholder="Street Address" onChange={(e) => this.handleChange(e)} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input type="text" name="aptNum" id="aptNum" placeholder="Apartment Number"
+                            onChange={(e) => this.handleChange(e)} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input required type="text" name="city" id="city" placeholder="City"
+                            onChange={(e) => this.handleChange(e)} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input required type="text" name="state" id="state" placeholder="State"
+                            onChange={(e) => this.handleChange(e)} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input required type="number" name="freeBeds" id="freeBeds" placeholder="Number of Free Beds"
+                            onChange={(e) => this.handleChange(e)} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input required type="tel" name="phone" id="phone" placeholder="Phone Number"
+                            onChange={(e) => this.handleChange(e)} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input type="text" name="website" id="website" placeholder="Website"
+                            onChange={(e) => this.handleChange(e)} />
+                    </FormGroup>
+                    <Button id="submit_button">Submit</Button>
+                </Form>
+            </Container>
         );
     }
 }

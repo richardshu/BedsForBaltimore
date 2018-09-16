@@ -41,7 +41,6 @@ class App extends Component {
         collection: collection
       };
       this.setState(newState);
-      console.log(docs);
     });
   }
 

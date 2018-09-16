@@ -6,6 +6,15 @@ import {
 import './HomelessSheltersList.css';
 
 class HomelessShelter extends Component {
+
+    editShelter() {
+        console.log("Editing shelter");
+    }
+
+    deleteShelter() {
+        console.log("Deleting shelter");
+    }
+    
     render() {
         const shelter = this.props.shelter;
         return (

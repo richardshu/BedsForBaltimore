@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
-import { Button, Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col} from 'reactstrap';
+import { Button, Container, Row, Col} from 'reactstrap';
 import HomelessShelter from './HomelessShelter';
 
 import './HomelessSheltersList.css';
 
 class HomelessSheltersList extends Component {
-    
-    editShelter() {
-        console.log("Editing shelter");
-    }
-
-    deleteShelter() {
-        console.log("Deleting shelter");
-    }
 
     render() {
         return (
