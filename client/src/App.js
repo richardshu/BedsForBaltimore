@@ -1,16 +1,38 @@
 import React, { Component } from 'react';
-import HomelessShelters from './Components/Pages/HomelessShelters';
+import SheltersList from './Components/User/Pages/SheltersList';
+import Navbar from './Components/Navbar/Navbar';
 import './App.css';
 import AddHomelessShelter from './Components/Pages/AddHomelessShelter';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      homelessShelters : []
+    };
+  }
+
+  componentDidMount(){
+    //database request here
+    this.setState({
+      homelessShelters : [
+        {
+          name: "Dummy",
+          address: "123 Main",
+          phone: "123-123-1234",
+          website: "example.com",
+          freeBeds: 10
+        }
+      ]
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Homeless Haven</h1>
-        </header>
-        <AddHomelessShelter/>
+        <Navbar />
+        <SheltersList homelessShelters={this.state.homelessShelters} />
       </div>
     );
   }

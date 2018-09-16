@@ -1,0 +1,18 @@
+#title {
+    margin-top: 30px;
+}
+
+#color_gradient {
+    line-height: 5px;
+    text-indent: -9999px; /* Hide the text off the screen */
+    background: linear-gradient(to right, #3be8b0, #1aafd0);
+}
+
+Button {
+    margin-left: 8px !important;
+}
+
+.card {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
